@@ -1,44 +1,3 @@
-<script>
-import useVuelidate from "@vuelidate/core";
-import { required } from "@vuelidate/validators";
-
-export default {
-  setup() {
-    return { v$: useVuelidate() };
-  },
-  props: {
-    id: {
-      type: String,
-      required: true,
-    },
-    label: {
-      type: String,
-      required: true,
-    },
-    placeholder: {
-      type: String,
-      required: true,
-    },
-    isRequired: {
-      type: Boolean,
-      required: true,
-    },
-  },
-  data() {
-    return {
-      numberValue: null,
-    };
-  },
-  validations() {
-    return {
-      numberValue: {
-        required,
-      },
-    };
-  },
-};
-</script>
-
 <template>
   <div class="number-input form-input">
     <label
@@ -79,3 +38,44 @@ export default {
     >
   </div>
 </template>
+
+<script>
+import useVuelidate from "@vuelidate/core";
+import { required } from "@vuelidate/validators";
+
+export default {
+  setup() {
+    return { v$: useVuelidate() };
+  },
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+    label: {
+      type: String,
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      required: true,
+    },
+    isRequired: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      numberValue: null,
+    };
+  },
+  validations() {
+    return {
+      numberValue: {
+        required,
+      },
+    };
+  },
+};
+</script>

@@ -1,40 +1,3 @@
-<script>
-import FormItemAbout from "./form-elems/FormItemAbout.vue";
-import TextInput from "./form-elems/TextInput.vue";
-import DateInput from "./form-elems/DateInput.vue";
-import PhoneInput from "./form-elems/PhoneInput.vue";
-import SelectInput from "./form-elems/SelectInput.vue";
-import MultiSelectInput from "./form-elems/MultiSelectInput.vue";
-import CheckboxInput from "./form-elems/CheckboxInput.vue";
-
-export default {
-  components: {
-    FormItemAbout,
-    TextInput,
-    DateInput,
-    PhoneInput,
-    SelectInput,
-    MultiSelectInput,
-    CheckboxInput,
-  },
-  data() {
-    return {
-      info: {
-        header: "Личная информация",
-        description:
-          "Укажите личную информацию согласно документу, удостоверяющему личность.",
-        hints: [
-          "Чтобы выделить несколько вариантов в поле «Группа клиентов», зажмите Ctrl и выберите необходимые категории.",
-          "Поля обязательные для заполнения отмечены звездочкой (*).",
-        ],
-      },
-      doctorOptions: ["Иванов", "Захаров", "Чернышева"],
-      clientsOptions: ["VIP", "Проблемные", "ОМС"],
-    };
-  },
-};
-</script>
-
 <template>
   <fieldset class="form__personal-data fieldset">
     <FormItemAbout :info="info" />
@@ -84,3 +47,40 @@ export default {
     </div>
   </fieldset>
 </template>
+
+<script>
+import FormItemAbout from './form-elems/FormItemAbout.vue';
+import TextInput from './form-elems/TextInput.vue';
+import DateInput from './form-elems/DateInput.vue';
+import PhoneInput from './form-elems/PhoneInput.vue';
+import SelectInput from './form-elems/SelectInput.vue';
+import MultiSelectInput from './form-elems/MultiSelectInput.vue';
+import CheckboxInput from './form-elems/CheckboxInput.vue';
+
+export default {
+  components: {
+    FormItemAbout,
+    TextInput,
+    DateInput,
+    PhoneInput,
+    SelectInput,
+    MultiSelectInput,
+    CheckboxInput,
+  },
+  data() {
+    return {
+      info: {
+        header: 'Личная информация',
+        description:
+          'Укажите личную информацию согласно документу, удостоверяющему личность.',
+        hints: [
+          'Чтобы выделить несколько вариантов в поле «Группа клиентов», зажмите Ctrl и выберите необходимые категории.',
+          'Поля обязательные для заполнения отмечены звездочкой (*).',
+        ],
+      },
+      doctorOptions: ['Иванов', 'Захаров', 'Чернышева'],
+      clientsOptions: ['VIP', 'Проблемные', 'ОМС'],
+    };
+  },
+};
+</script>

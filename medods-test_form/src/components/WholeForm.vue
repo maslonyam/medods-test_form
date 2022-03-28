@@ -1,47 +1,3 @@
-<script>
-import PersonalData from "./form-items/PersonalData.vue";
-import AddressData from "./form-items/AddressData.vue";
-import PassportData from "./form-items/PassportData.vue";
-import CreateButton from "./CreateButton.vue";
-import SuccessWarn from "./SuccessWarn.vue";
-
-export default {
-  components: {
-    PersonalData,
-    AddressData,
-    PassportData,
-    CreateButton,
-    SuccessWarn,
-  },
-  methods: {
-    submitForm() {
-      const requiredFields = document.querySelectorAll(
-        "input[required], select[required], label[data-required='true']"
-      );
-      const success = document.querySelector(".success-wrapper");
-      let isValid;
-
-      requiredFields.forEach((field) => {
-        isValid = this.checkRequiredFields(field);
-      });
-
-      if (isValid) {
-        success.classList.add("show");
-      }
-    },
-    checkRequiredFields(field) {
-      let isValid = true;
-      if (!field.value) {
-        isValid = false;
-        field.classList.add("invalid");
-        window.scrollTo(0, 0);
-      }
-      return isValid;
-    },
-  },
-};
-</script>
-
 <template>
   <div class="container">
     <h1 class="header">Новый клиент</h1>
@@ -59,6 +15,50 @@ export default {
     <SuccessWarn />
   </div>
 </template>
+
+<script>
+import PersonalData from './form-items/PersonalData.vue';
+import AddressData from './form-items/AddressData.vue';
+import PassportData from './form-items/PassportData.vue';
+import CreateButton from './CreateButton.vue';
+import SuccessWarn from './SuccessWarn.vue';
+
+export default {
+  components: {
+    PersonalData,
+    AddressData,
+    PassportData,
+    CreateButton,
+    SuccessWarn,
+  },
+  methods: {
+    submitForm() {
+      const requiredFields = document.querySelectorAll(
+        "input[required], select[required], label[data-required='true']",
+      );
+      const success = document.querySelector('.success-wrapper');
+      let isValid;
+
+      requiredFields.forEach((field) => {
+        isValid = this.checkRequiredFields(field);
+      });
+
+      if (isValid) {
+        success.classList.add('show');
+      }
+    },
+    checkRequiredFields(field) {
+      let isValid = true;
+      if (!field.value) {
+        isValid = false;
+        field.classList.add('invalid');
+        window.scrollTo(0, 0);
+      }
+      return isValid;
+    },
+  },
+};
+</script>
 
 <style lang="scss">
 @import "../assets/sass/input.scss";

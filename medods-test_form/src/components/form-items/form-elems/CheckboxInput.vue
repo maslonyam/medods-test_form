@@ -1,40 +1,3 @@
-<script>
-import useVuelidate from "@vuelidate/core";
-import { required } from "@vuelidate/validators";
-
-export default {
-  setup() {
-    return { v$: useVuelidate() };
-  },
-  props: {
-    id: {
-      type: String,
-      required: true,
-    },
-    label: {
-      type: String,
-      required: true,
-    },
-    isRequired: {
-      type: String,
-      required: true,
-    },
-  },
-  data() {
-    return {
-      isChecked: null,
-    };
-  },
-  validations() {
-    return {
-      isChecked: {
-        required,
-      },
-    };
-  },
-};
-</script>
-
 <template>
   <div class="check-input form-input">
     <label
@@ -68,6 +31,43 @@ export default {
     >
   </div>
 </template>
+
+<script>
+import useVuelidate from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
+
+export default {
+  setup() {
+    return { v$: useVuelidate() };
+  },
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+    label: {
+      type: String,
+      required: true,
+    },
+    isRequired: {
+      type: String,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      isChecked: null,
+    };
+  },
+  validations() {
+    return {
+      isChecked: {
+        required,
+      },
+    };
+  },
+};
+</script>
 
 <style lang="scss">
 $dark-blue: #5889c2;

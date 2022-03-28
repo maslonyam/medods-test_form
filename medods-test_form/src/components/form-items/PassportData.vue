@@ -1,36 +1,3 @@
-<script>
-import FormItemAbout from "./form-elems/FormItemAbout.vue";
-import TextInput from "./form-elems/TextInput.vue";
-import SelectInput from "./form-elems/SelectInput.vue";
-import NumberInput from "./form-elems/NumberInput.vue";
-import DateInput from "./form-elems/DateInput.vue";
-
-export default {
-  components: {
-    FormItemAbout,
-    TextInput,
-    SelectInput,
-    NumberInput,
-    DateInput,
-  },
-  data() {
-    return {
-      info: {
-        header: "Паспортные данные",
-        description:
-          "Укажите паспортные данные клиента согласно документу, удостоворяющему личность.",
-        hints: ["Поля обязательные для заполнения отмечены звездочкой (*)."],
-      },
-      documentOptions: [
-        "Паспорт",
-        "Свидетельство о рождении",
-        "Водительское удостоверние",
-      ],
-    };
-  },
-};
-</script>
-
 <template>
   <fieldset class="form__passport fieldset">
     <FormItemAbout :info="info" />
@@ -63,3 +30,36 @@ export default {
     </div>
   </fieldset>
 </template>
+
+<script>
+import FormItemAbout from './form-elems/FormItemAbout.vue';
+import TextInput from './form-elems/TextInput.vue';
+import SelectInput from './form-elems/SelectInput.vue';
+import NumberInput from './form-elems/NumberInput.vue';
+import DateInput from './form-elems/DateInput.vue';
+
+export default {
+  components: {
+    FormItemAbout,
+    TextInput,
+    SelectInput,
+    NumberInput,
+    DateInput,
+  },
+  data() {
+    return {
+      info: {
+        header: 'Паспортные данные',
+        description:
+          'Укажите паспортные данные клиента согласно документу, удостоворяющему личность.',
+        hints: ['Поля обязательные для заполнения отмечены звездочкой (*).'],
+      },
+      documentOptions: [
+        'Паспорт',
+        'Свидетельство о рождении',
+        'Водительское удостоверние',
+      ],
+    };
+  },
+};
+</script>

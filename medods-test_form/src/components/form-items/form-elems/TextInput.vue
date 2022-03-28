@@ -1,6 +1,6 @@
 <script>
-import useVuelidate from "@vuelidate/core";
-import { required } from "@vuelidate/validators";
+import useVuelidate from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
 
 export default {
   setup() {
@@ -41,8 +41,7 @@ export default {
 
 <template>
   <div class="text-input form-input">
-    <label
-      :for="id"
+    <label :for="id"
       class="label"
       :class="{
         invalid:

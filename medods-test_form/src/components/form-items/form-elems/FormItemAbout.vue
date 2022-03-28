@@ -1,3 +1,11 @@
+<template>
+  <div class="form__about about">
+    <h2 class="about-header">{{ info.header }}</h2>
+    <p class="about-description">{{ info.description }}</p>
+    <p class="about-hints" :key="hint" v-for="hint in info.hints">{{ hint }}</p>
+  </div>
+</template>
+
 <script>
 export default {
   props: {
@@ -8,14 +16,6 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div class="form__about about">
-    <h2 class="about-header">{{ info.header }}</h2>
-    <p class="about-description">{{ info.description }}</p>
-    <p class="about-hints" :key="hint" v-for="hint in info.hints">{{ hint }}</p>
-  </div>
-</template>
 
 <style lang="scss">
 $dark-gray: #3e3e3e;

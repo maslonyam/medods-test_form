@@ -1,44 +1,3 @@
-<script>
-import useVuelidate from "@vuelidate/core";
-import { required } from "@vuelidate/validators";
-
-export default {
-  setup() {
-    return { v$: useVuelidate() };
-  },
-  props: {
-    id: {
-      type: String,
-      required: true,
-    },
-    label: {
-      type: String,
-      required: true,
-    },
-    isRequired: {
-      type: Boolean,
-      required: true,
-    },
-    options: {
-      type: Array,
-      required: true,
-    },
-  },
-  data() {
-    return {
-      selected: [],
-    };
-  },
-  validations() {
-    return {
-      selected: {
-        required,
-      },
-    };
-  },
-};
-</script>
-
 <template>
   <div class="mselect-input form-input">
     <label
@@ -84,3 +43,44 @@ export default {
   }
 }
 </style>
+
+<script>
+import useVuelidate from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
+
+export default {
+  setup() {
+    return { v$: useVuelidate() };
+  },
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+    label: {
+      type: String,
+      required: true,
+    },
+    isRequired: {
+      type: Boolean,
+      required: true,
+    },
+    options: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      selected: [],
+    };
+  },
+  validations() {
+    return {
+      selected: {
+        required,
+      },
+    };
+  },
+};
+</script>

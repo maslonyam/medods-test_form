@@ -1,3 +1,9 @@
+<template>
+  <button class="button" type="submit">
+    {{ msg }}
+  </button>
+</template>
+
 <script>
 export default {
   props: {
@@ -8,12 +14,6 @@ export default {
   },
 };
 </script>
-
-<template>
-  <button class="button" type="submit">
-    {{ msg }}
-  </button>
-</template>
 
 <style lang="scss">
 $white: #ffffff;
